@@ -14,8 +14,9 @@ The application provides definitions and translations aggregated from different 
 The application features a two-level architecture. On the user end we have the Word Add In (and soon, the writer and PDF plug-ins).
 The user-level invokes a web service in the application level that fetches word definitions and translations from the web.
 This architecture keeps the user level real simple and enables us to focus more on the look and feel of the plug-ins.
-On the other hand in the application level we can focus more on performance issues.
+On the other hand in the web service level we can focus more on performance issues.
 
+![alt tag](https://raw.githubusercontent.com/gajduk/just-in-time-Macedonian-thesaurus/master/architecture.png)
 
 The web service is implemented in Java using the Play Framework. It uses the [ConcurentLinkedHashMap](https://code.google.com/p/concurrentlinkedhashmap/) from Google for efficient caching on frequently queried words. Furthermore, it uses the Java built-in threading support to concurrently fetch information from multiple websites which speeds up querying even more.
 
